@@ -9,13 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        NavigationStack{
+            VStack{
+                Divider()
+                TabView {
+                    ForEach(0..<4){_ in 
+                        Image("cover-cheetah")
+                            .resizable()
+                            .scaledToFit()
+                        Spacer()
+                    }
+                    
+                }
+                .tabViewStyle(.page)
+            }
+            .navigationTitle("Africa")
+            
+        }//: NavigationStack
     }
 }
 
